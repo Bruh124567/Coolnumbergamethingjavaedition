@@ -48,7 +48,8 @@ public class Main {
     public static void main(String[] args) {
         Random random = new Random();
         Scanner scanner = new Scanner(System.in);
-        System.out.println("Welcome!\nEnter your difficulty:\n1.Default(1-100)\n2.Custom");
+        System.out.println("Welcome!\nEnter your difficulty:\n1.Default(1-100)\n2.Custom\n3.Exit");
+        System.out.print("Enter your choice: ");
         int choice = scanner.nextInt();
         if (choice == 1){
             int answer = random.nextInt(101);
@@ -62,10 +63,11 @@ public class Main {
             }
         } else if (choice == 2){
             System.out.println("Custom Difficulty");
-            System.out.println("Enter the max. number to be generated:");
+            System.out.print("Enter the max. number to be generated:");
             int num1 = scanner.nextInt();
+            System.out.println();
             if (num1 > 0){
-                System.out.println("Enter the min. number to be generated:");
+                System.out.print("Enter the min. number to be generated:");
                 int num2 = scanner.nextInt();
                 if (num2 > 0){
                     int answer = selCustomDifficulty(num1, num2);
@@ -87,6 +89,11 @@ public class Main {
 
 
             }
+        } else if (choice == 3) {
+            System.out.println("Goodbye!");
+        } else {
+            System.out.println("Invalid input!\nRestarting...");
+            main(null);
         }
     }
 }
