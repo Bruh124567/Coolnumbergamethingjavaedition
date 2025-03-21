@@ -1,4 +1,4 @@
-# Coolnumbergamethingjavaedition
+# Cool Number Game Thing(Java Edition)
 
 <h1>This is officially the best game you'll ever play</h1>
 <h3>You'll see insane features, such as:</h3>
