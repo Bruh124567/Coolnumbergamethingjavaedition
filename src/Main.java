@@ -12,15 +12,19 @@ public class Main {
         while (k > 0) {
             System.out.println("Enter your guess:");
             int guess = scanner.nextInt();
-            if (guess == answer) {
-              correct = true;
-              break;
-            } else if (guess > answer) {
-                k--;
-                System.out.println("Too high! You have " + k + "guesses left.");
+            if (guess > num2 && guess < num1) {
+                if (guess == answer) {
+                    correct = true;
+                    break;
+                } else if (guess > answer) {
+                    k--;
+                    System.out.println("Too high! You have " + k + "guesses left.");
+                } else {
+                    k--;
+                    System.out.println("Too low! You have " + k + "guesses left.");
+                }
             } else {
-                k--;
-                System.out.println("Too low! You have " + k + "guesses left.");
+                System.out.println("Invalid input.\nNumber must be positive and in range.");
             }
         }
         return correct;
@@ -53,7 +57,7 @@ public class Main {
         int choice = scanner.nextInt();
         if (choice == 1){
             int answer = random.nextInt(101);
-            boolean correct = numGuess(answer, 1, 100);
+            boolean correct = numGuess(answer, 100, 1);
             if (correct) {
                 System.out.println("Correct!\nYou Win!");
                 tryAgain();
